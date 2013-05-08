@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Datetime:</b>
+  <%= @catch.datetime %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @catch.location %>
+</p>
+
+<p>
+  <b>Depth:</b>
+  <%= @catch.depth %>
+</p>
+
+<p>
+  <b>Ground:</b>
+  <%= @catch.ground %>
+</p>
+
+<p>
+  <b>Species:</b>
+  <%= @catch.species %>
+</p>
+
+<p>
+  <b>Units:</b>
+  <%= @catch.units %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%= @catch.weight %>
+</p>
+
+<p>
+  <b>Gear:</b>
+  <%= @catch.gear %>
+</p>
+
+<p>
+  <b>Bait:</b>
+  <%= @catch.bait %>
+</p>
+
+
+<%= link_to 'Edit', edit_catch_path(@catch) %> |
+<%= link_to 'Back', catches_path %>

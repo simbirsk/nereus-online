@@ -1,0 +1,23 @@
+<h1>Listing baits</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @baits.each do |bait| %>
+  <tr>
+    <td><%= bait.name %></td>
+    <td><%= link_to 'Show', bait %></td>
+    <td><%= link_to 'Edit', edit_bait_path(bait) %></td>
+    <td><%= link_to 'Destroy', bait, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bait', new_bait_path %>

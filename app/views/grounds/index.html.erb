@@ -1,0 +1,23 @@
+<h1>Listing grounds</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @grounds.each do |ground| %>
+  <tr>
+    <td><%= ground.name %></td>
+    <td><%= link_to 'Show', ground %></td>
+    <td><%= link_to 'Edit', edit_ground_path(ground) %></td>
+    <td><%= link_to 'Destroy', ground, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ground', new_ground_path %>

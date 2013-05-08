@@ -1,0 +1,39 @@
+<h1>Listing catches</h1>
+
+<table>
+  <tr>
+    <th>Datetime</th>
+    <th>Location</th>
+    <th>Depth</th>
+    <th>Ground</th>
+    <th>Species</th>
+    <th>Units</th>
+    <th>Weight</th>
+    <th>Gear</th>
+    <th>Bait</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @catches.each do |catch| %>
+  <tr>
+    <td><%= catch.datetime %></td>
+    <td><%= catch.location %></td>
+    <td><%= catch.depth %></td>
+    <td><%= catch.ground %></td>
+    <td><%= catch.species %></td>
+    <td><%= catch.units %></td>
+    <td><%= catch.weight %></td>
+    <td><%= catch.gear %></td>
+    <td><%= catch.bait %></td>
+    <td><%= link_to 'Show', catch %></td>
+    <td><%= link_to 'Edit', edit_catch_path(catch) %></td>
+    <td><%= link_to 'Destroy', catch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Catch', new_catch_path %>

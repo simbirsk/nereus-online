@@ -1,0 +1,53 @@
+<%= form_for(@catch) do |f| %>
+  <% if @catch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@catch.errors.count, "error") %> prohibited this catch from being saved:</h2>
+
+      <ul>
+      <% @catch.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :datetime %><br />
+    <%= f.datetime_select :datetime %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :depth %><br />
+    <%= f.number_field :depth %>
+  </div>
+  <div class="field">
+    <%= f.label :ground %><br />
+    <%= f.text_field :ground %>
+  </div>
+  <div class="field">
+    <%= f.label :species %><br />
+    <%= f.text_field :species %>
+  </div>
+  <div class="field">
+    <%= f.label :units %><br />
+    <%= f.number_field :units %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :gear %><br />
+    <%= f.text_field :gear %>
+  </div>
+  <div class="field">
+    <%= f.label :bait %><br />
+    <%= f.text_field :bait %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

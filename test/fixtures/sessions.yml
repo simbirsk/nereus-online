@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: 2013-05-08
+  wind_direction: 1
+  wind_force: 1
+  weather: 
+  temperature: 1
+  pressure: 1
+  swell: 1
+
+two:
+  date: 2013-05-08
+  wind_direction: 1
+  wind_force: 1
+  weather: 
+  temperature: 1
+  pressure: 1
+  swell: 1
