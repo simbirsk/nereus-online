@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Weather.destroy_all
 Weather.create(name: 'Sunny')
 Weather.create(name: 'Cloudy')
 Weather.create(name: 'Foggy')
