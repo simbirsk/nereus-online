@@ -8,4 +8,5 @@
 Weather.create(name: 'Sunny')
 Weather.create(name: 'Cloudy')
 Weather.create(name: 'Foggy')
+Weather.create(name: 'Rainy')
 Weather.create(name: 'Stormy')
