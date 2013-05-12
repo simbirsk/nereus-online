@@ -37,6 +37,10 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
+# To use Devise
+gem 'devise'
+
+# To use Bootstrap
 gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
