@@ -37,8 +37,9 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-# To use Devise
+# To use Devise & CanCan
 gem 'devise'
+gem 'cancan'
 
 # To use Bootstrap
 gem 'therubyracer'
