@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130512104202) do
+ActiveRecord::Schema.define(:version => 20130513155143) do
 
   create_table "baits", :force => true do |t|
     t.string   "name"
@@ -39,20 +39,7 @@ ActiveRecord::Schema.define(:version => 20130512104202) do
   add_index "catches", ["location_id"], :name => "index_catches_on_location_id"
   add_index "catches", ["species_id"], :name => "index_catches_on_species_id"
 
-  create_table "gears", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  create_table "grounds", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "sessions", :force => true do |t|
+  create_table "fishing_journeys", :force => true do |t|
     t.date     "date"
     t.integer  "wind_direction"
     t.integer  "wind_force"
@@ -65,7 +52,20 @@ ActiveRecord::Schema.define(:version => 20130512104202) do
     t.integer  "user_id"
   end
 
-  add_index "sessions", ["weather_id"], :name => "index_sessions_on_weather_id"
+  add_index "fishing_journeys", ["weather_id"], :name => "index_sessions_on_weather_id"
+
+  create_table "gears", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "grounds", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "species", :force => true do |t|
     t.string   "name"

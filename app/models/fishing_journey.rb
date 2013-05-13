@@ -1,4 +1,4 @@
-class Session < ActiveRecord::Base
+class FishingJourney < ActiveRecord::Base
   belongs_to :weather
   belongs_to :user
 
