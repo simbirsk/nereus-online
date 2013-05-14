@@ -1,8 +1,11 @@
 class FishingJourneysController < ApplicationController
   # GET /sessions
   # GET /sessions.json
+
+  load_and_authorize_resource
+
   def index
-    @fishing_journeys = FishingJourney.all
+    @fishing_journeys = FishingJourney.accessible_by(current_ability)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,6 +44,7 @@ class FishingJourneysController < ApplicationController
   # POST /sessions.json
   def create
     @fishing_journey = FishingJourney.new(params[:fishing_journey])
+    @fishing_journey.user = current_user
 
     respond_to do |format|
       if @fishing_journey.save
