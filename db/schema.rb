@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130513155143) do
+ActiveRecord::Schema.define(:version => 20130514115506) do
 
   create_table "baits", :force => true do |t|
     t.string   "name"
@@ -29,8 +29,9 @@ ActiveRecord::Schema.define(:version => 20130513155143) do
     t.float    "weight"
     t.integer  "gear_id"
     t.integer  "bait_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "fishing_journey_id"
   end
 
   add_index "catches", ["bait_id"], :name => "index_catches_on_bait_id"
