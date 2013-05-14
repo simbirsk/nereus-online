@@ -1,4 +1,15 @@
 <%= form_for @fishing_journey, :html => { :class => 'form-horizontal' } do |f| %>
+    <% if @fishing_journey.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@fishing_journey.errors.count, 'error') %> prohibited this catch from being saved:</h2>
+
+          <ul>
+            <% @fishing_journey.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
     <div class="row">
       <div class="span6">
         <div class="control-group">
@@ -26,7 +37,7 @@
           <div class="control-group">
             <%= f.label :weather_id, :class => 'control-label' %>
             <div class="controls">
-              <%= select(:unit, :weather_id, Weather.all.collect {|weather| [weather.name,weather.id,]}) %>
+              <%= f.collection_select :weather_id, Weather.all, :id, :name %>
             </div>
           </div>
           <div class="control-group">
@@ -63,9 +74,51 @@
                 New catch
               </legend>
               <div class="control-group">
+                <%= builder.label :datetime, :class => 'control-label' %>
+                <div class="controls">
+                  <%= builder.text_field :datetime, data: {behaviour: 'datepicker'} %>
+                </div>
+              </div>
+              <div class="control-group">
+                <%= builder.label :ground_id, :class => 'control-label' %>
+                <div class="controls">
+                  <%= builder.collection_select :ground_id, Ground.all, :id, :name %>
+                </div>
+              </div>
+              <div class="control-group">
+                <%= builder.label :species_id, :class => 'control-label' %>
+                <div class="controls">
+                  <%= builder.collection_select :species_id, Species.all, :id, :name %>
+                </div>
+              </div>
+              <div class="control-group">
                 <%= builder.label :depth, :class => 'control-label' %>
                 <div class="controls">
                   <%= builder.number_field :depth, :class => 'number_field' %>
+                </div>
+              </div>
+              <div class="control-group">
+                <%= builder.label :units, :class => 'control-label' %>
+                <div class="controls">
+                  <%= builder.number_field :units, :class => 'number_field' %>
+                </div>
+              </div>
+              <div class="control-group">
+                <%= builder.label :weight, :class => 'control-label' %>
+                <div class="controls">
+                  <%= builder.number_field :weight, :class => 'number_field' %>
+                </div>
+              </div>
+              <div class="control-group">
+                <%= builder.label :gear_id, :class => 'control-label' %>
+                <div class="controls">
+                  <%= builder.collection_select :gear_id, Gear.all, :id, :name %>
+                </div>
+              </div>
+              <div class="control-group">
+                <%= builder.label :bait_id, :class => 'control-label' %>
+                <div class="controls">
+                  <%= builder.collection_select :bait_id, Bait.all, :id, :name %>
                 </div>
               </div>
             </fieldset>
