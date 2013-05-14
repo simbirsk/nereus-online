@@ -31,6 +31,7 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user
       can :manage, FishingJourney, user: {id: user.id}
+      can :create, FishingJourney
     end
   end
 end
