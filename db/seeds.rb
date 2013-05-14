@@ -11,3 +11,9 @@ Weather.create(name: 'Cloudy')
 Weather.create(name: 'Foggy')
 Weather.create(name: 'Rainy')
 Weather.create(name: 'Stormy')
+
+Ground.destroy_all
+Ground.create(name: 'Sand')
+Ground.create(name: 'Stone')
+Ground.create(name: 'Weeds')
+Ground.create(name: 'Gravel')
