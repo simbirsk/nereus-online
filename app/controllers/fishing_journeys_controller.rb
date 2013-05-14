@@ -28,6 +28,7 @@ class FishingJourneysController < ApplicationController
   # GET /sessions/new.json
   def new
     @fishing_journey = FishingJourney.new
+    @fishing_journey.catches.build
 
     respond_to do |format|
       format.html # new.html.erb

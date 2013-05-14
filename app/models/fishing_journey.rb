@@ -1,7 +1,7 @@
 class FishingJourney < ActiveRecord::Base
   belongs_to :weather
   belongs_to :user
-  has_many :catches
+  has_many :catches, dependent: :destroy
   accepts_nested_attributes_for :catches
 
   attr_accessible :date, :pressure, :swell, :temperature, :wind_direction, :wind_force, :user

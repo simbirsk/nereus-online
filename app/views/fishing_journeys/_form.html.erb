@@ -56,7 +56,23 @@
         </fieldset>
 
       </div>
+      <div class="span6">
+        <%= f.fields_for :catches do |builder| %>
+            <fieldset class="well">
+              <legend>
+                New catch
+              </legend>
+              <div class="control-group">
+                <%= builder.label :depth, :class => 'control-label' %>
+                <div class="controls">
+                  <%= builder.number_field :depth, :class => 'number_field' %>
+                </div>
+              </div>
+            </fieldset>
+        <% end %>
+      </div>
     </div>
+
     <div class="form-actions">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
