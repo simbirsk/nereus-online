@@ -1,9 +1,38 @@
 <h1>Dashboard</h1>
 <div class="row">
   <div class="span6">
-
+    <div class="row">
+      <div class="span6">
+        <span>
+          Catches map
+        </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span6">
+        <table class="table table-bordered table-striped table-condensed">
+          <caption>Activity log</caption>
+          <thead>
+          <tr>
+            <th>When</th>
+            <th>What</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @fishing_journeys.each do |fishing_journey| %>
+              <tr>
+                <td><%= fishing_journey.date %></td>
+                <td>Gone out for fishing</td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
   <div class="span6">
-
+    <span>
+      Statistics
+    </span>
   </div>
 </div>
