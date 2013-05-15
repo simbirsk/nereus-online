@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
-  revision: c26c235b8e16c62b53d8d14a9a6a367949155126
+  revision: 3ac1736365a14253b34b4798ee2dc0215896be9a
   specs:
     twitter-bootstrap-rails (2.2.6)
       actionpack (>= 3.1)
@@ -40,12 +40,12 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
-    bootstrap-datepicker-rails (1.0.0.6)
+    bootstrap-datepicker-rails (1.0.0.7)
       railties (>= 3.0)
     builder (3.0.4)
-    cancan (1.6.9)
-    chartjs-rails (0.1)
-      railties (>= 3.1)
+    cancan (1.6.10)
+    chart-js-rails (0.0.4)
+      railties (~> 3.1)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -68,7 +68,7 @@ GEM
     jquery-rails (2.2.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    json (1.7.7)
+    json (1.8.0)
     less (2.3.2)
       commonjs (~> 0.2.6)
     less-rails (2.3.3)
@@ -141,7 +141,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-datepicker-rails
   cancan
-  chartjs-rails
+  chart-js-rails
   coffee-rails (~> 3.2.1)
   devise
   jquery-rails

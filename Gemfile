@@ -48,4 +48,4 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'bootstrap-datepicker-rails'
 
 # To use chart.js (http://www.chartjs.org)
-gem 'chartjs-rails'
+gem 'chart-js-rails'
