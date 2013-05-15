@@ -17,3 +17,6 @@ Ground.create(name: 'Sand')
 Ground.create(name: 'Stone')
 Ground.create(name: 'Weeds')
 Ground.create(name: 'Gravel')
+
+Species.destroy_all
+Species.create(name: 'Sea Bass')
