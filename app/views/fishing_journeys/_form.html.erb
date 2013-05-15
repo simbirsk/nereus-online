@@ -30,8 +30,9 @@
           </div>
           <div class="control-group">
             <%= f.label :wind_force, :class => 'control-label' %>
-            <div class="controls">
+            <div class="controls input-append">
               <%= f.number_field :wind_force, :class => 'number_field' %>
+              <span class="add-on">BFT</span>
             </div>
           </div>
           <div class="control-group">
@@ -42,14 +43,16 @@
           </div>
           <div class="control-group">
             <%= f.label :temperature, :class => 'control-label' %>
-            <div class="controls">
+            <div class="controls input-append">
               <%= f.number_field :temperature, :class => 'number_field' %>
+              <span class="add-on">C</span>
             </div>
           </div>
           <div class="control-group">
             <%= f.label :pressure, :class => 'control-label' %>
-            <div class="controls">
+            <div class="controls input-append">
               <%= f.number_field :pressure, :class => 'number_field' %>
+              <span class="add-on">hPa</span>
             </div>
           </div>
         </fieldset>
@@ -93,8 +96,9 @@
               </div>
               <div class="control-group">
                 <%= builder.label :depth, :class => 'control-label' %>
-                <div class="controls">
+                <div class="controls input-append">
                   <%= builder.number_field :depth, :class => 'number_field' %>
+                  <span class="add-on">m</span>
                 </div>
               </div>
               <div class="control-group">
@@ -105,8 +109,9 @@
               </div>
               <div class="control-group">
                 <%= builder.label :weight, :class => 'control-label' %>
-                <div class="controls">
+                <div class="controls input-append">
                   <%= builder.number_field :weight, :class => 'number_field' %>
+                  <span class="add-on">Kg</span>
                 </div>
               </div>
               <div class="control-group">
