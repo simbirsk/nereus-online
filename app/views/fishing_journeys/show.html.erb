@@ -19,6 +19,17 @@
   <dt><strong><%= model_class.human_attribute_name(:swell) %>:</strong></dt>
   <dd><%= @fishing_journey.swell %></dd>
 </dl>
+<h3>
+  Catches
+</h3>
+<ul>
+  <% for catch in @fishing_journey.catches %>
+        <li>
+          <%= catch.datetime %>
+        </li>
+  <% end %>
+</ul>
+
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
