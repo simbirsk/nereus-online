@@ -4,7 +4,15 @@ class FishingJourney < ActiveRecord::Base
   has_many :catches, dependent: :destroy
   accepts_nested_attributes_for :catches
 
-  attr_accessible :date, :pressure, :swell, :temperature, :wind_direction, :wind_force, :user
+  attr_accessible :date,
+                  :pressure,
+                  :swell,
+                  :temperature,
+                  :wind_direction,
+                  :wind_force,
+                  :user,
+                  :weather_id,
+                  :catches_attributes
 
   validates :user_id, presence: true
 
