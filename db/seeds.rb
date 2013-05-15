@@ -13,10 +13,16 @@ Weather.create(name: 'Rainy')
 Weather.create(name: 'Stormy')
 
 Ground.destroy_all
+Ground.create(name: 'Clay')
+Ground.create(name: 'Cobbles')
+Ground.create(name: 'Gravel')
+Ground.create(name: 'Mud')
+Ground.create(name: 'Pebbles')
 Ground.create(name: 'Sand')
+Ground.create(name: 'Shells')
+Ground.create(name: 'Silt')
 Ground.create(name: 'Stone')
 Ground.create(name: 'Weeds')
-Ground.create(name: 'Gravel')
 
 Species.destroy_all
 Species.create(name: 'Sea Bass')
