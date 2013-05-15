@@ -25,4 +25,5 @@ Ground.create(name: 'Stone')
 Ground.create(name: 'Weeds')
 
 Species.destroy_all
-Species.create(name: 'Sea Bass')
+Species.create(name: 'Black sea bass', scientific_name: 'Centropristis striata')
+Species.create(name: 'European seabass', scientific_name: 'Dicentrarchus labrax')
