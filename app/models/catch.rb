@@ -7,4 +7,8 @@ class Catch < ActiveRecord::Base
   has_one :bait
 
   attr_accessible :datetime, :depth, :units, :weight, :ground_id, :species_id
+
+  validates :wind_force, numericality: {greater_than_or_equal_to: 0}, :allow_blank => true
+  validates :units, numericality: {greater_than_or_equal_to: 0}, :allow_blank => true
+  validates :weight, numericality: {greater_than_or_equal_to: 0}, :allow_blank => true
 end
