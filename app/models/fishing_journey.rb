@@ -4,7 +4,7 @@ class FishingJourney < ActiveRecord::Base
   has_many :catches, dependent: :destroy
   accepts_nested_attributes_for :catches
 
-  attr_accessible :date,
+  attr_accessible :datetime,
                   :pressure,
                   :swell,
                   :temperature,
@@ -22,7 +22,11 @@ class FishingJourney < ActiveRecord::Base
   validates :pressure, numericality: {greater_than_or_equal_to: 870, less_than_or_equal_to: 1085}, :allow_blank => true
   validates :swell, numericality: {greater_than_or_equal_to: 0, less_than_or_equal_to: 16}, :allow_blank => true
 
-  def message
-    'Gone fishing...'
+  validate :datetime_is_past
+
+  def datetime_is_past
+    if datetime > Time.now
+      errors.add :datetime, ' has to be past'
+    end
   end
 end
