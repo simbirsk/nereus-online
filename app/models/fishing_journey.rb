@@ -22,11 +22,5 @@ class FishingJourney < ActiveRecord::Base
   validates :pressure, numericality: {greater_than_or_equal_to: 870, less_than_or_equal_to: 1085}, :allow_blank => true
   validates :swell, numericality: {greater_than_or_equal_to: 0, less_than_or_equal_to: 16}, :allow_blank => true
 
-  validate :datetime_is_past
-
-  def datetime_is_past
-    if datetime > Time.now
-      errors.add :datetime, ' has to be past'
-    end
-  end
+  validates :datetime, date_is_past: true
 end

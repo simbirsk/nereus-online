@@ -8,6 +8,8 @@ class Catch < ActiveRecord::Base
 
   attr_accessible :datetime, :depth, :units, :weight, :ground_id, :species_id
 
-  validates :units, numericality: {greater_than_or_equal_to: 0}, :allow_blank => true
-  validates :weight, numericality: {greater_than_or_equal_to: 0}, :allow_blank => true
+  validates :units, numericality: {greater_than_or_equal_to: 0}, allow_blank: true
+  validates :weight, numericality: {greater_than_or_equal_to: 0}, allow_blank: true
+
+  validates :datetime, presence: true, date_is_past: true
 end
