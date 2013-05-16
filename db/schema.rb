@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130515110236) do
+ActiveRecord::Schema.define(:version => 20130516090306) do
 
   create_table "baits", :force => true do |t|
     t.string   "name"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(:version => 20130515110236) do
   add_index "catches", ["species_id"], :name => "index_catches_on_species_id"
 
   create_table "fishing_journeys", :force => true do |t|
-    t.date     "date"
+    t.datetime "datetime"
     t.integer  "wind_direction"
     t.integer  "wind_force"
     t.integer  "weather_id"

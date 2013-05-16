@@ -19,9 +19,9 @@
           </tr>
           </thead>
           <tbody>
-          <% @fishing_journeys.each do |fishing_journey| %>
+          <% @activities.each do |activity| %>
               <tr>
-                <td><%= fishing_journey.date %></td>
+                <td><%= activity.datetime %></td>
                 <td>Gone out for fishing</td>
               </tr>
           <% end %>

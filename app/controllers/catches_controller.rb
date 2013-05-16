@@ -1,6 +1,10 @@
 class CatchesController < ApplicationController
   # GET /catches
   # GET /catches.json
+
+  load_and_authorize_resource :fishing_journey
+  load_and_authorize_resource :catch, through: :fishing_journey
+
   def index
     @catches = Catch.all
 

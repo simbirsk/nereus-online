@@ -32,6 +32,8 @@ class Ability
     if user
       can :manage, FishingJourney, user: {id: user.id}
       can :create, FishingJourney
+      can :manage, Catch, fishing_journey: {user_id: user.id}
+      can :create, Catch
     end
   end
 end
