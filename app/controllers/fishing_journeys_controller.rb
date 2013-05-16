@@ -49,7 +49,7 @@ class FishingJourneysController < ApplicationController
 
     respond_to do |format|
       if @fishing_journey.save
-        format.html { redirect_to @fishing_journey, notice: 'Session was successfully created.' }
+        format.html { redirect_to @fishing_journey, notice: 'Fishing journey was successfully created.' }
         format.json { render json: @fishing_journey, status: :created, location: @fishing_journey }
       else
         format.html { render action: "new" }
