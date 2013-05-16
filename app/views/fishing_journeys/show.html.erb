@@ -5,17 +5,17 @@
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:datetime) %>:</strong></dt>
-  <dd><%= @fishing_journey.datetime %></dd>
+  <dd><%= @fishing_journey.datetime.to_s :short %></dd>
   <dt><strong><%= model_class.human_attribute_name(:wind_direction) %>:</strong></dt>
   <dd><%= @fishing_journey.wind_direction %></dd>
   <dt><strong><%= model_class.human_attribute_name(:wind_force) %>:</strong></dt>
-  <dd><%= @fishing_journey.wind_force %></dd>
+  <dd><%= @fishing_journey.wind_force %> BFT</dd>
   <dt><strong><%= model_class.human_attribute_name(:weather_id) %>:</strong></dt>
-  <dd><%= @fishing_journey.weather_id %></dd>
+  <dd><%= @fishing_journey.weather.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:temperature) %>:</strong></dt>
-  <dd><%= @fishing_journey.temperature %></dd>
+  <dd><%= @fishing_journey.temperature %> C</dd>
   <dt><strong><%= model_class.human_attribute_name(:pressure) %>:</strong></dt>
-  <dd><%= @fishing_journey.pressure %></dd>
+  <dd><%= @fishing_journey.pressure %> hPa</dd>
   <dt><strong><%= model_class.human_attribute_name(:swell) %>:</strong></dt>
   <dd><%= @fishing_journey.swell %></dd>
 </dl>
@@ -23,9 +23,12 @@
   Catches
 </h3>
 <ul>
-  <% for catch in @fishing_journey.catches %>
+  <% @fishing_journey.catches.each do |catch| %>
         <li>
-          <%= catch.datetime %>
+          <span class="label">
+            <%= catch.datetime.to_s :short %>
+          </span>
+          <%= link_to catch.species.name, species_path(catch.species) %> @ location
         </li>
   <% end %>
 </ul>
