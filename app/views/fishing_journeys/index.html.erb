@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:date) %></th>
+      <th><%= model_class.human_attribute_name(:datetime) %></th>
       <th><%= model_class.human_attribute_name(:wind_direction) %></th>
       <th><%= model_class.human_attribute_name(:wind_force) %></th>
       <th><%= model_class.human_attribute_name(:weather_id) %></th>
@@ -20,7 +20,7 @@
     <% @fishing_journeys.each do |fishing_journey| %>
       <tr>
         <td><%= link_to fishing_journey.id, fishing_journey_path(fishing_journey) %></td>
-        <td><%= fishing_journey.date %></td>
+        <td><%= fishing_journey.datetime %></td>
         <td><%= fishing_journey.wind_direction %></td>
         <td><%= fishing_journey.wind_force %></td>
         <td><%= fishing_journey.weather_id %></td>
