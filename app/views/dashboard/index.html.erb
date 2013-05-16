@@ -21,7 +21,7 @@
           <tbody>
           <% @activities.each do |activity| %>
               <tr>
-                <td><%= activity.datetime %></td>
+                <td><%= distance_of_time_in_words(Time.now, activity.datetime) %> ago</td>
                 <td><%= activity.message %></td>
               </tr>
           <% end %>
