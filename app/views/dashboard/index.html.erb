@@ -22,7 +22,7 @@
           <% @activities.each do |activity| %>
               <tr>
                 <td><%= activity.datetime %></td>
-                <td>Gone out for fishing</td>
+                <td><%= activity.message %></td>
               </tr>
           <% end %>
           </tbody>

@@ -21,4 +21,8 @@ class FishingJourney < ActiveRecord::Base
   validates :temperature, numericality: {greater_than_or_equal_to: -50, less_than_or_equal_to: 50}, :allow_blank => true
   validates :pressure, numericality: {greater_than_or_equal_to: 870, less_than_or_equal_to: 1085}, :allow_blank => true
   validates :swell, numericality: {greater_than_or_equal_to: 0, less_than_or_equal_to: 16}, :allow_blank => true
+
+  def message
+    'Gone fishing...'
+  end
 end
