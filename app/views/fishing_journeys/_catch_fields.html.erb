@@ -1,0 +1,57 @@
+
+    <fieldset class="well">
+      <legend>
+        New catch
+      </legend>
+      <div class="control-group">
+        <%= f.label :datetime, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :datetime, data: {behaviour: 'datepicker'} %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :ground_id, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.collection_select :ground_id, Ground.all, :id, :name %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :species_id, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.collection_select :species_id, Species.all, :id, :name %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :depth, :class => 'control-label' %>
+        <div class="controls input-append">
+          <%= f.number_field :depth, :class => 'number_field' %>
+          <span class="add-on">m</span>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :units, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.number_field :units, :class => 'number_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :weight, :class => 'control-label' %>
+        <div class="controls input-append">
+          <%= f.number_field :weight, :class => 'number_field' %>
+          <span class="add-on">Kg</span>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :gear_id, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.collection_select :gear_id, Gear.all, :id, :name %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :bait_id, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.collection_select :bait_id, Bait.all, :id, :name %>
+        </div>
+      </div>
+      <%= f.link_to_remove "Remove this catch" %>
+    </fieldset>

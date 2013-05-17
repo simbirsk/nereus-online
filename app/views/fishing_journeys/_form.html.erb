@@ -1,4 +1,4 @@
-<%= form_for @fishing_journey, :html => { :class => 'form-horizontal' } do |f| %>
+<%= nested_form_for @fishing_journey, :html => { :class => 'form-horizontal' } do |f| %>
     <% if @fishing_journey.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@fishing_journey.errors.count, 'error') %> prohibited this catch from being saved:</h2>
@@ -71,69 +71,16 @@
 
       </div>
       <div class="span6">
-        <%= f.fields_for :catches do |builder| %>
-            <fieldset class="well">
-              <legend>
-                New catch
-              </legend>
-              <div class="control-group">
-                <%= builder.label :datetime, :class => 'control-label' %>
-                <div class="controls">
-                  <%= builder.text_field :datetime, data: {behaviour: 'datepicker'} %>
-                </div>
-              </div>
-              <div class="control-group">
-                <%= builder.label :ground_id, :class => 'control-label' %>
-                <div class="controls">
-                  <%= builder.collection_select :ground_id, Ground.all, :id, :name %>
-                </div>
-              </div>
-              <div class="control-group">
-                <%= builder.label :species_id, :class => 'control-label' %>
-                <div class="controls">
-                  <%= builder.collection_select :species_id, Species.all, :id, :name %>
-                </div>
-              </div>
-              <div class="control-group">
-                <%= builder.label :depth, :class => 'control-label' %>
-                <div class="controls input-append">
-                  <%= builder.number_field :depth, :class => 'number_field' %>
-                  <span class="add-on">m</span>
-                </div>
-              </div>
-              <div class="control-group">
-                <%= builder.label :units, :class => 'control-label' %>
-                <div class="controls">
-                  <%= builder.number_field :units, :class => 'number_field' %>
-                </div>
-              </div>
-              <div class="control-group">
-                <%= builder.label :weight, :class => 'control-label' %>
-                <div class="controls input-append">
-                  <%= builder.number_field :weight, :class => 'number_field' %>
-                  <span class="add-on">Kg</span>
-                </div>
-              </div>
-              <div class="control-group">
-                <%= builder.label :gear_id, :class => 'control-label' %>
-                <div class="controls">
-                  <%= builder.collection_select :gear_id, Gear.all, :id, :name %>
-                </div>
-              </div>
-              <div class="control-group">
-                <%= builder.label :bait_id, :class => 'control-label' %>
-                <div class="controls">
-                  <%= builder.collection_select :bait_id, Bait.all, :id, :name %>
-                </div>
-              </div>
-            </fieldset>
-        <% end %>
+        <%= f.fields_for :catches %>
+        <%= f.link_to_add "Add a catch", :catches %>
       </div>
     </div>
 
     <div class="form-actions">
       <%= f.submit 'Save', :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+      <%= link_to t('.cancel', :default => t('helpers.links.cancel')),
                   fishing_journeys_path, :class => 'btn' %>
     </div>
 <% end %>
+
+<%= javascript_include_tag :defaults, "nested_form" %>

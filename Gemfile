@@ -49,3 +49,6 @@ gem 'bootstrap-datepicker-rails'
 
 # To use chart.js (http://www.chartjs.org)
 gem 'chart-js-rails'
+
+# To use nested_form gem (https://github.com/ryanb/nested_form)
+gem 'nested_form'
