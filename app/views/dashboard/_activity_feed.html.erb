@@ -4,7 +4,6 @@
   <% @activities.each do |activity| %>
       <tr>
         <td>
-          <%= activity.datetime %>
           <% if activity.kind_of? Catch %>
           Caught a <%= link_to activity.species.name.downcase, species_path(activity.species) %>
           <% elsif activity.kind_of? FishingJourney %>
