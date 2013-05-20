@@ -1,4 +1,7 @@
 Nereus::Application.routes.draw do
+  resources :locations
+
+
   get "dashboard/index"
   get "welcome/index"
 

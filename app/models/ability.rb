@@ -34,6 +34,7 @@ class Ability
       can :create, FishingJourney
       can :manage, Catch, fishing_journey: {user_id: user.id}
       can :create, Catch
+      can :manage, Location
     end
   end
 end
