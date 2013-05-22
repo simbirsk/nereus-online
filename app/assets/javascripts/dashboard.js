@@ -1,3 +1,14 @@
+Gmaps.map.callback = function() {
+    if (Gmaps.map.markers.length <= 1) {
+        setTimeout(function() {
+            Gmaps.map.serviceObject.setZoom(2)
+        }, 50)
+    } else {
+        Gmaps.map.map_options.auto_zoom = true
+        Gmaps.map.adjustMapToBounds()
+    }
+}
+
 var data = {
     labels : ["January","February","March","April","May","June","July"],
     datasets : [
