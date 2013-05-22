@@ -1,6 +1,6 @@
 class Catch < ActiveRecord::Base
   belongs_to :fishing_journey
-  # belongs_to :location
+  belongs_to :location
   has_one :ground
   belongs_to :species
   has_one :gear
