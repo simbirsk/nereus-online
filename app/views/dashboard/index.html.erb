@@ -16,9 +16,21 @@
     </div>
   </div>
   <div class="span6">
-    <span>
-      Statistics
-    </span>
-    <canvas id="myChart" width="400" height="400"></canvas>
+    <canvas id="myChart" width="570" height="400"></canvas>
   </div>
 </div>
+
+<% content_for :scripts do %>
+    <script type="text/javascript" charset="utf-8">
+        Gmaps.map.callback = function() {
+            if (Gmaps.map.markers.length <= 1) {
+                setTimeout(function() {
+                    Gmaps.map.serviceObject.setZoom(2)
+                }, 50)
+            } else {
+                Gmaps.map.map_options.auto_zoom = true
+                Gmaps.map.adjustMapToBounds()
+            }
+        }
+    </script>
+<% end %>
